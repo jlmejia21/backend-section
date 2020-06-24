@@ -18,6 +18,10 @@ const Routes = require('../routes');
 // models
 const { User, Comment, Idea } = require('../models')
 
+// repositories
+
+const { UserRepository, CommentRepository, IdeaRepository } = require('../repositories')
+
 const container = createContainer();
 
 container.register({
@@ -35,6 +39,10 @@ container.register({
         User: asValue(User),
         Idea: asValue(Idea),
         Comment: asValue(Comment),
+    }).register({
+        UserRepository: asClass(UserRepository).singleton(),
+        CommentRepository: asClass(CommentRepository).singleton(),
+        IdeaRepository: asClass(IdeaRepository).singleton(),
     })
 
 
