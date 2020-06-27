@@ -17,7 +17,7 @@ class CommentService extends BaseService {
             error.message = 'ideaId must be sent';
             throw error;
         }
-        const idea = await this._ideaRepository.get(ideaId);
+        const idea = await _ideaRepository.get(ideaId);
         if (!idea) {
             const error = new Error();
             error.status = 404;
@@ -28,14 +28,14 @@ class CommentService extends BaseService {
         return comments;
     }
 
-    async createComment(comment, ideaId) {
+    async createComment(comment, ideaId, userId) {
         if (!ideaId) {
             const error = new Error();
             error.status = 400;
             error.message = 'ideaId must be sent';
             throw error;
         }
-        const idea = await this._ideaRepository.get(ideaId);
+        const idea = await _ideaRepository.get(ideaId);
         if (!idea) {
             const error = new Error();
             error.status = 404;
@@ -43,9 +43,9 @@ class CommentService extends BaseService {
             throw error;
         }
 
-        const createdComment = await this._commentRepository.create(comment);
+        const createdComment = await _commentRepository.create({...comment, author: userId });
         idea.comments.push(createdComment);
-        return await this._ideaRepository.update(ideaId, { comments: idea.comments });
+        return await _ideaRepository.update(ideaId, { comments: idea.comments });
     }
 
 
