@@ -1,0 +1,9 @@
+language: node_js
+node_js:
+    - stable
+deploy:
+    provider: heroku
+    app: shareyourideas-nodejs-jm
+    api_key:
+        secure: YbFFHH6ffn2+5v4G8Qf8y8ZkDzK6dgxfMrSD8KzzTqsS9LFlorzQja9coHlbMVHv8/H80pZCNc6OGMH/VWxj8zdJ6S6Ewqxs6Fi3jNGyjZmNJU8SIb2s+3pFu4oxb0jqXmyCWbTbrg4n/tlsMjRmdR9LvYuNNPXjzhIcsh7R4JLqpAraav6T1dPtkBNjRYwhcV1GYF8iDq8RvnwLgXJnpSU9ifdVtST40YMAH6/6f3kirMI0Xuk7y1JDZrlQ10X/DWN2KANKXVm1DM6m1j5OZ38SDpLR7GVnNEKOzZKqLHUVT/F6rtz4miMoNakdlNAABzWpnH0x0PAFzpH3yi/gmhWJXDKoU/oS8kzkb0nTrtTMWFsrtmO1y4yLsoBG1UJG/kLqJI+UobdQxNJd4SbcODdfpfYy4OU1UksvkkqaPsgR+VqEvF3+PB+AF0aDXTba/AW9qNt2i2bA5UirHPpDGUtoJ8VIHISaP/04F5dQ/Fy0rkBueCCfDLYCfm0b4V62OJh41xw4cXCNKKyjvYHoNSiGK9eictvlwaqu2NRV0WwjRvZ+w8S5MHhyfrgHm5+Q1VK1v7eEQumK6P7kAK/Tl2YDenMEd2CezvcuIJQzD4YM5sXPzBZtEvf//U6bCgjOPT7tu4zIC6pZY3l1wndeKYI0L9A7srHoj0m/yM/WEgM=
+      
